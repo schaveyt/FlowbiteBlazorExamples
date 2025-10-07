@@ -1,0 +1,184 @@
+@page "/hero-sections"
+
+<PageTitle>Hero Sections</PageTitle>
+
+<div class="space-y-12">
+    <header class="flex flex-col gap-2">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Hero Sections</h1>
+        <p class="text-gray-600 dark:text-gray-400 max-w-3xl">
+            Explore different hero section layouts built with Flowbite Blazor components and Tailwind utilities.
+            Each example is responsive and ready to adapt to your content.
+        </p>
+    </header>
+
+    <section class="bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-800">
+        <div class="grid max-w-screen-xl px-4 py-12 mx-auto lg:gap-16 xl:gap-20 lg:py-20 lg:grid-cols-12 items-center">
+            <div class="lg:col-span-6 xl:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 rounded-full bg-primary-100 dark:bg-primary-900/50 px-4 py-1.5 text-primary-700 dark:text-primary-300 text-sm font-medium">
+                    <RocketIcon class="w-5 h-5" />
+                    Featured Release
+                </div>
+                <h2 class="text-4xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white md:text-5xl">
+                    Launch modern experiences with Flowbite Blazor
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+                    Build engaging hero sections that convert with responsive layouts, accessible components, and the Flowbite design system—all without leaving Blazor.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <Button Color="ButtonColor.Primary" Size="ButtonSize.Large" class="px-6 py-3">
+                        <span class="inline-flex items-center gap-2">
+                            <PlayIcon class="w-5 h-5" />
+                            Start building
+                        </span>
+                    </Button>
+                    <Button Color="ButtonColor.Light" Size="ButtonSize.Large" class="px-6 py-3">
+                        <span class="inline-flex items-center gap-2">
+                            <InfoIcon class="w-5 h-5" />
+                            Learn more
+                        </span>
+                    </Button>
+                </div>
+                <div class="flex flex-wrap gap-6 pt-2 text-sm text-gray-500 dark:text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <CheckCircleIcon class="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                        Built-in dark mode
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <CheckCircleIcon class="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                        Accessible components
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <CheckCircleIcon class="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                        Tailwind-powered styling
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 lg:mt-0 lg:col-span-6 xl:col-span-5">
+                <Card class="shadow-xl border-gray-100 dark:border-gray-800">
+                    <div class="h-56 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 rounded-2xl flex items-center justify-center">
+                        <div class="text-white text-center space-y-2 px-4">
+                            <p class="text-sm uppercase tracking-[0.3em]">Flowbite</p>
+                            <p class="text-2xl font-semibold">Design System</p>
+                            <p class="text-xs text-primary-100">Reusable hero patterns for product teams</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-6 text-sm text-gray-600 dark:text-gray-300">
+                        <div>
+                            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Launch time</p>
+                            <p class="text-lg font-semibold text-gray-900 dark:text-white">4 weeks</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Conversion lift</p>
+                            <p class="text-lg font-semibold text-gray-900 dark:text-white">+32%</p>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="grid max-w-screen-xl px-4 py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-20 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h2 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-tight md:text-5xl xl:text-6xl text-gray-900 dark:text-white">
+                    Payments tool for software companies
+                </h2>
+                <p class="max-w-2xl mb-8 font-light text-gray-600 dark:text-gray-400 md:text-lg lg:text-xl">
+                    From checkout to global tax compliance, teams use Flowbite to simplify their payment stack with secure, developer-friendly tooling.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <Button Color="ButtonColor.Primary" Size="ButtonSize.Medium" class="px-6 py-3">
+                        <span class="inline-flex items-center gap-2">
+                            <ArrowRightIcon class="w-5 h-5" />
+                            Get Started
+                        </span>
+                    </Button>
+                    <Button Color="ButtonColor.Light" Size="ButtonSize.Medium" class="px-6 py-3">
+                        Speak to Sales
+                    </Button>
+                </div>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="Product mockup" class="w-full max-w-md" />
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl mx-auto px-4 py-12 lg:py-20">
+            <div class="grid gap-12 lg:grid-cols-2">
+                <div class="space-y-6">
+                    <Badge Color="Badge.BadgeColor.Info" class="w-fit">Case study</Badge>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+                        Align your marketing with a data-driven hero
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">
+                        Highlight product wins, key metrics, and partner logos to build trust at a glance. Pair rich visuals with compelling copy to convert faster.
+                    </p>
+                    <div class="grid gap-6 sm:grid-cols-2">
+                        <Card class="shadow-none border border-gray-200 dark:border-gray-800">
+                            <div class="space-y-3">
+                                <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">
+                                    <ChartIcon class="w-5 h-5" />
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Growth ready</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Use responsive grids and cards to surface product insights and customer outcomes.</p>
+                            </div>
+                        </Card>
+                        <Card class="shadow-none border border-gray-200 dark:border-gray-800">
+                            <div class="space-y-3">
+                                <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">
+                                    <UserIcon class="w-5 h-5" />
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Trusted partners</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Spotlight customer stories and partners to add credibility to your launch messaging.</p>
+                            </div>
+                        </Card>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-8">
+                        <div class="flex items-center gap-3">
+                            <Avatar Size="AvatarSize.Medium" Rounded="true" ImageUrl="https://flowbite-blazor.org/images/people/profile-picture-1.jpg" Alt="Customer photo" />
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-white">Aaliyah Patel</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Chief Marketing Officer</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-sm text-gray-600 dark:text-gray-400 max-w-sm">
+                            “We re-launched our homepage hero with Flowbite Blazor and saw a 28% increase in trial sign-ups within two weeks.”
+                        </blockquote>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <Button Color="ButtonColor.Primary">
+                            <span class="inline-flex items-center gap-2">
+                                <ClipboardArrowIcon class="w-5 h-5" />
+                                Copy layout
+                            </span>
+                        </Button>
+                        <Button Color="ButtonColor.Light">Download assets</Button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/search-mockup.png" alt="Search mockup" class="w-full rounded-2xl border border-gray-200 dark:border-gray-800 dark:hidden" />
+                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/search-mockup-dark.png" alt="Search mockup in dark mode" class="hidden w-full rounded-2xl border border-gray-200 dark:border-gray-800 dark:block" />
+                    <div class="grid grid-cols-2 gap-6">
+                        <Card class="shadow-none border border-gray-200 dark:border-gray-800">
+                            <div class="space-y-2">
+                                <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Time to ship</p>
+                                <p class="text-3xl font-bold text-gray-900 dark:text-white">5x faster</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">than hand-coded layouts</p>
+                            </div>
+                        </Card>
+                        <Card class="shadow-none border border-gray-200 dark:border-gray-800">
+                            <div class="space-y-2">
+                                <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Engagement</p>
+                                <p class="text-3xl font-bold text-gray-900 dark:text-white">+47%</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">from optimized CTAs</p>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
