@@ -47,3 +47,30 @@
 
 ## Razor Page Styling
 - Prefer Tailwind CSS, especially Flowbite look and file.
+
+## UI & Forms Conventions
+- Pages & routing
+  - Use PascalCase filenames (e.g., `Pages/Login.razor`) and lowercase routes (e.g., `@page "/login"`).
+  - Include `<PageTitle>` per page for correct document titles.
+  - Keep simple logic inline; move growing logic into `.razor.cs` partials.
+- Navigation
+  - Add new routes to `Layout/AppSidebar.razor` using `SidebarItem` with a clear label and appropriate Flowbite icon.
+  - Maintain logical ordering (Home → examples → utilities); use `ArrowRightToBracketIcon` for auth-related links.
+- Flowbite components
+  - Wrap forms in `Card` for visual grouping; pair `Label` with `TextInput` using matching `For`/`Id`.
+  - Buttons: `ButtonColor.Primary` for primary actions; `ButtonColor.Light` for secondary/social.
+  - Icons: prefer Flowbite icons (`Flowbite.Icons`, `.Extended`) instead of raw SVGs; ensure `_Imports.razor` includes namespaces.
+- Forms & validation
+  - Use `EditForm` with `DataAnnotationsValidator` and `ValidationSummary`.
+  - Bind to a small POCO model with `[Required]`, `[EmailAddress]`, etc.; use `OnValidSubmit` for handling.
+  - For production logic, inject services under `Services/` instead of console stubs.
+- Layout & styling
+  - Center auth forms with Tailwind utilities, not custom CSS (e.g., `min-h-[calc(100vh-8rem)] flex items-center justify-center p-4`).
+  - Keep custom CSS minimal and in `wwwroot/css/app.css`; prefer Tailwind + Flowbite utilities.
+- Tailwind & build
+  - After adding pages with new classes, rebuild CSS:
+    `tools/tailwindcss.exe -c tailwind.config.js -i wwwroot/css/app.css -o wwwroot/css/app.min.css --minify`.
+  - If using dynamic class names, update the `safelist` in `tailwind.config.js`.
+- Accessibility
+  - Ensure each `TextInput` has a corresponding `Label` via `Id`/`For`.
+  - Use semantic headings and descriptive link text; add `aria-*` as needed.
