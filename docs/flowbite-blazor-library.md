@@ -1171,6 +1171,97 @@ The Flowbite Blazor library supports both built-in DataAnnotations validation an
 The form validation system integrates seamlessly with Blazor's built-in form handling while providing additional features for custom validation scenarios and state management. All form components support validation states through their Color properties and automatically integrate with ValidationMessage components.
 
 
+##### Login Form Pattern
+
+```razor
+@page "/login"
+<PageTitle>Login</PageTitle>
+
+<div class="min-h-[calc(100vh-8rem)] flex items-center justify-center p-4">
+    <Card class="w-full max-w-md">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Sign in to your account</h1>
+            <p class="mt-1 text-sm text-gray-500">Welcome back! Please enter your details.</p>
+        </div>
+
+        <EditForm Model="model" OnValidSubmit="HandleLocalLogin">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="flex flex-col gap-4">
+                <div>
+                    <div class="mb-2 block">
+                        <Label For="email" Value="Email" />
+                    </div>
+                    <TextInput Id="email" Type="email" @bind-Value="model.Email" Placeholder="you@example.com" Required="true" />
+                </div>
+
+                <div>
+                    <div class="mb-2 block">
+                        <Label For="password" Value="Password" />
+                    </div>
+                    <TextInput Id="password" Type="password" @bind-Value="model.Password" Placeholder="••••••••" Required="true" />
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <Checkbox Id="rememberMe" @bind-Checked="model.RememberMe" />
+                        <Label For="rememberMe" Value="Remember me" />
+                    </div>
+                    <a href="#" class="text-sm text-primary-600 hover:underline dark:text-primary-400">Forgot password?</a>
+                </div>
+
+                <div class="flex flex-col gap-2 mt-2">
+                    <Button Type="submit" Color="ButtonColor.Primary" class="w-full">Sign in</Button>
+                    <div class="relative text-center">
+                        <span class="px-2 text-xs text-gray-500 bg-white dark:bg-gray-800 relative z-10">or</span>
+                        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                            <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
+                        </div>
+                    </div>
+                    <Button Color="ButtonColor.Light" class="w-full" OnClick="LoginWithGoogle">
+                        <span class="inline-flex items-center gap-2">
+                            <GoogleIcon class="w-5 h-5" />
+                            <span>Continue with Google</span>
+                        </span>
+                    </Button>
+                </div>
+            </div>
+        </EditForm>
+    </Card>
+</div>
+
+@code {
+    private LoginModel model = new();
+
+    private Task HandleLocalLogin()
+    {
+        // TODO: replace with auth service
+        return Task.CompletedTask;
+    }
+
+    private Task LoginWithGoogle()
+    {
+        // TODO: redirect to Google OAuth
+        return Task.CompletedTask;
+    }
+
+    private sealed class LoginModel
+    {
+        [Required, EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        public string Password { get; set; } = string.Empty;
+
+        public bool RememberMe { get; set; }
+    }
+}
+```
+
+This pattern keeps the layout centered with Tailwind utilities, uses Flowbite controls for all inputs, and provides a secondary social login path without leaving the Flowbite styling system.
+
+
 
 
 #### QuickGrid Examples
@@ -2067,4 +2158,3 @@ You MUST decide where to place the `/` route. The `dotnet new` generates a `Page
 </docs>
 
 </project>
-
